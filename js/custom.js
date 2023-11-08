@@ -1,125 +1,98 @@
-(function($) {
+(function ($) {
+  "use strict";
 
-	"use strict";
-
-	/* ----------------------------------------------------------- */
-	/*  FUNCTION TO STOP LOCAL AND YOUTUBE VIDEOS IN SLIDESHOW
+  $(document).ready(function () {
     /* ----------------------------------------------------------- */
-
-	function stop_videos() {
-		var video = document.getElementById("video");
-		if (video.paused !== true && video.ended !== true) {
-			video.pause();
-		}
-		$('.youtube-video')[0].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
-	}
-
-	$(document).ready(function() {
-
-		/* ----------------------------------------------------------- */
-		/*  STOP VIDEOS
+    /*  AJAX CONTACT FORM
         /* ----------------------------------------------------------- */
 
-		$('.slideshow nav span').on('click', function () {
-			stop_videos();
-		});
+    $(document).ready(function () {
+		$(".contactform").on("submit", function (e) {
+			// Prevent form submission for now
+			e.preventDefault();
 
-		/* ----------------------------------------------------------- */
-		/*  FIX REVEALATOR ISSUE AFTER PAGE LOADED
-        /* ----------------------------------------------------------- */
+			// Get form data
+			var name = $('input[name="name"]').val();
+			var email = $('input[name="email"]').val();
+			var subject = $('input[name="subject"]').val();
+			var message = $('textarea[name="message"]').val();
 
-		$(".revealator-delay1").addClass('no-transform');
-
-		/* ----------------------------------------------------------- */
-		/*  PORTFOLIO GALLERY
-        /* ----------------------------------------------------------- */
-
-		if ($('.grid').length) {
-			new CBPGridGallery( document.getElementById( 'grid-gallery' ) );
-		}
-
-		/* ----------------------------------------------------------- */
-		/*  HIDE HEADER WHEN PORTFOLIO SLIDESHOW OPENED
-        /* ----------------------------------------------------------- */
-
-		$(".grid figure").on('click', function() {
-			$("#navbar-collapse-toggle").addClass('hide-header');
-		});
-
-		/* ----------------------------------------------------------- */
-		/*  SHOW HEADER WHEN PORTFOLIO SLIDESHOW CLOSED
-        /* ----------------------------------------------------------- */
-
-		$(".nav-close").on('click', function() {
-			$("#navbar-collapse-toggle").removeClass('hide-header');
-		});
-		$(".nav-prev").on('click', function() {
-			if ($('.slideshow ul li:first-child').hasClass('current')) {
-				$("#navbar-collapse-toggle").removeClass('hide-header');
-			}
-		});
-		$(".nav-next").on('click', function() {
-			if ($('.slideshow ul li:last-child').hasClass('current')) {
-				$("#navbar-collapse-toggle").removeClass('hide-header');
+			// Simple form validation
+			if (name === "" || email === "" || subject === "" || message === "") {
+			// Display error message if any field is empty
+			$(".output_message").text(
+				"All fields are required. Please fill in all the fields."
+			);
+			} else if (!isValidEmail(email)) {
+			// Validate email format
+			$(".output_message").text(
+				"Invalid email address. Please enter a valid email."
+			);
+			} else {
+			// If all fields are filled and email is valid, proceed with form submission
+			var formData = $(this).serialize();
+			submitForm(formData);
 			}
 		});
 
-		/* ----------------------------------------------------------- */
-		/*  PORTFOLIO DIRECTION AWARE HOVER EFFECT
-        /* ----------------------------------------------------------- */
-
-		var item = $(".grid li figure");
-		var elementsLength = item.length;
-		for (var i = 0; i < elementsLength; i++) {
-			$(item[i]).hoverdir();
+		// Function to validate email format
+		function isValidEmail(email) {
+			var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+			return emailRegex.test(email);
 		}
 
-		/* ----------------------------------------------------------- */
-		/*  AJAX CONTACT FORM
-        /* ----------------------------------------------------------- */
-
-		$(".contactform").on("submit", function() {
-			$(".output_message").text("Sending...");
-
-			var form = $(this);
-			$.ajax({
-				url: form.attr("action"),
-				method: form.attr("method"),
-				data: form.serialize(),
-				success: function(result) {
-					if (result == "success") {
-						$(".form-inputs").css("display", "none");
-						$(".box p").css("display", "none");
-						$(".contactform").find(".output_message").addClass("success");
-						$(".output_message").text("Message Sent!");
-					} else {
-						$(".tabs-container").css("height", "440px");
-
-						$(".contactform").find(".output_message").addClass("error");
-						$(".output_message").text("Error Sending!");
-					}
-				}
+		// Function to submit form data via AJAX
+		function submitForm(formData) {
+			Swal.fire({
+			title: "Loading...",
+			html:
+				'<div class="spinkit">' +
+				'<div class="rectangle1"></div>' +
+				'<div class="rectangle2"></div>' +
+				'<div class="rectangle3"></div>' +
+				'<div class="rectangle4"></div>' +
+				'<div class="rectangle5"></div>' +
+				"</div>",
+			showConfirmButton: false,
+			allowOutsideClick: false,
 			});
+			$.ajax({
+        type: "POST",
+        url: "https://script.google.com/macros/s/AKfycbwp8CQl-w2z-McFLO2DT-xwBBGqEKontmLlGdmeUvam4ms1hDS4EmRnEGhcneX9KrcrSg/exec",
+        data: formData,
+        success: function (response) {
+          Swal.fire({
+            title: "Done",
+            text: response.message,
+            icon: "success",
+          });
+          $(".output_message").text(response);
+        },
+        error: function (xhr, status, error) {
+          Swal.fire({
+            title: "Oops...",
+            text: xhr.responseJSON.error,
+            icon: "error",
+            buttons: true,
+          });
+          console.error(xhr.responseText);
+        },
+      });
+		}
+    });
+  });
 
-			return false;
-		});
-
-	});
-
-	$(document).keyup(function(e) {
-
-		/* ----------------------------------------------------------- */
-		/*  KEYBOARD NAVIGATION IN PORTFOLIO SLIDESHOW
+  $(document).keyup(function (e) {
+    /* ----------------------------------------------------------- */
+    /*  KEYBOARD NAVIGATION IN PORTFOLIO SLIDESHOW
         /* ----------------------------------------------------------- */
-		if (e.keyCode === 27) {
-			stop_videos();
-			$('.close-content').click();
-			$("#navbar-collapse-toggle").removeClass('hide-header');
-		}
-		if ((e.keyCode === 37) || (e.keyCode === 39)) {
-			stop_videos();
-		}
-	});
-
-
+    if (e.keyCode === 27) {
+      stop_videos();
+      $(".close-content").click();
+      $("#navbar-collapse-toggle").removeClass("hide-header");
+    }
+    if (e.keyCode === 37 || e.keyCode === 39) {
+      stop_videos();
+    }
+  });
 })(jQuery);
