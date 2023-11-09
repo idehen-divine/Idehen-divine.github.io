@@ -8,10 +8,10 @@ I am a dedicated developer enthusiastic about exploring new technologies and cre
 
 - **Name:** Idehen divine
 - **Location:** Benin city, Edo state, Nigeria.
-- **Email:** idehen divine [idehendivine16@gmail.com]
-- **Portfolio:** [Your Portfolio Website URL]
-- **LinkedIn:** [Your LinkedIn Profile URL]
-- **GitHub:** [Your GitHub Profile URL]
+- **Email:** [idehen divine](idehendivine16@gmail.com)
+- **Portfolio:** [portfolio link](https://idehen-divine.github.io)
+- **LinkedIn:** [LinkedIn](https://www.linkedin.com/in/idehen-divine)
+- **Twitter:** [Twitter](https://x.com/idehen_divine/)
 
 ## Projects
 
