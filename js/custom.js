@@ -61,7 +61,7 @@
           url: "https://script.google.com/macros/s/AKfycbyo67qatSKv6rBJ6YKnQp-jLKOJ5DDNdr6RU1IcAlzqhn-KGho00Rv7TMpUDf_wugsq/exec",
           data: formData,
           success: function (response) {
-		$(".contactform").reset();
+		// $(".contactform").reset();
             Swal.fire({
               title: "Done",
               text: response,
@@ -69,7 +69,7 @@
             });
           },
           error: function (xhr, status, error) {
-		  $(".contactform").reset();
+		  // $(".contactform").reset();
             Swal.fire({
               title: "Oops...",
               text: "An error occurred! Try again later",
