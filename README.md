@@ -21,8 +21,8 @@ Description: Brief description of the project, including its purpose, technologi
 
 ![Project Image](link/to/project/image.png)
 
-- **GitHub Repository:** [Link to GitHub Repository]
-- **Live Demo:** [Link to Live Demo]
+- **GitHub Repository:** [Link to GitHub Repository](https://github.com/idehen-divine/clean)
+//- **Live Demo:** [Link to Live Demo]
 
 ### Project 2: [Glassmorphism implementation]
 
@@ -30,8 +30,8 @@ Description: Brief description of the project, including its purpose, technologi
 
 ![Project Image](link/to/project/image.png)
 
-- **GitHub Repository:** [Link to GitHub Repository]
-- **Live Demo:** [Link to Live Demo]
+- **GitHub Repository:** [Link to GitHub Repository](https://github.com/idehen-divine/glassmorphism)
+//- **Live Demo:** [Link to Live Demo]
 
 ## Skills
 
@@ -57,7 +57,7 @@ Description: Brief description of the project, including its purpose, technologi
   
 ## Contact Me
 
-Feel free to reach out to me at [idehendivine16@gmail.com] or connect with me on [LinkedIn](https://www.linkedin.com/in/idehen-divine). I am always open to new opportunities, collaborations, and interesting projects.
+Feel free to reach out to me at [email](idehendivine16@gmail.com) or connect with me on [LinkedIn](https://www.linkedin.com/in/idehen-divine). I am always open to new opportunities, collaborations, and interesting projects.
 
 Thank you for visiting my portfolio!
 
