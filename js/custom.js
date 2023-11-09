@@ -58,7 +58,7 @@
         });
         $.ajax({
           type: "POST",
-          url: "https://script.google.com/macros/s/AKfycbwp8CQl-w2z-McFLO2DT-xwBBGqEKontmLlGdmeUvam4ms1hDS4EmRnEGhcneX9KrcrSg/exec",
+          url: "https://script.google.com/macros/s/AKfycbyo67qatSKv6rBJ6YKnQp-jLKOJ5DDNdr6RU1IcAlzqhn-KGho00Rv7TMpUDf_wugsq/exec",
           data: formData,
           success: function (response) {
             Swal.fire({
