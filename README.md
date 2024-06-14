@@ -13,46 +13,6 @@ I am a passionate developer, always eager to explore new technologies and craft 
 - **LinkedIn:** [Connect with me on LinkedIn](https://www.linkedin.com/in/idehen-divine)
 - **Twitter:** [Follow me on Twitter](https://twitter.com/idehen_divine/)
 
-## Projects
-
-### Project 1: Cleaning Service Template
-
-Description: An innovative template designed for cleaning service websites, utilizing a range of technologies. I played a key role in [mention your specific contributions].
-
-![Project Image](link/to/project/image.png)
-
-- **GitHub Repository:** [View the GitHub Repository](https://github.com/idehen-divine/clean)
-
-### Project 2: Glassmorphism Implementation
-
-Description: A creative implementation of the glassmorphism UI trend, showcasing my expertise in front-end development.
-
-![Project Image](link/to/project/image.png)
-
-- **GitHub Repository:** [View the GitHub Repository](https://github.com/idehen-divine/glassmorphism)
-
-## Skills
-
-- **Languages:** Proficient in HTML, CSS, JavaScript, jQuery, SQL, PHP, Dart
-- **Frameworks:** Experienced in Flutter, Laravel, Bootstrap, React
-- **Tools:** Familiar with Bash scripting
-- **Additional Skills:** Git, RESTful APIs, Responsive Web Design
-
-## Professional Experience
-
-### Lead Engineer - CODECRAFTER'S
-- **Duration:** August 2023 - Present
-- **Role:** Leading the development of the company's software solutions.
-
-### Backend Developer - CODECRAFTER'S
-- **Duration:** August 2023 - Present
-- **Role:** Responsible for building and managing backend resources.
-
-## Education
-
-### Bachelor of Science in Production Engineering - University of Benin
-- **Expected Graduation Year:** Present
-  
 ## Get in Touch
 
 Feel free to contact me at [idehendivine16@gmail.com](mailto:idehendivine16@gmail.com) or connect via [LinkedIn](https://www.linkedin.com/in/idehen-divine). I'm open to new opportunities, collaborations, and exciting projects.
